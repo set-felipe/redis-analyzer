@@ -25,13 +25,21 @@ Selene te ajuda a detectar:
 
 ## 📁 Estrutura do Projeto
 app/  ├── main.py # Aplicação principal (Dash) 
+
       ├── assets/ # Estilos CSS e estáticos 
+      
       ├── selene/ # Engine de IA: ML + regras 
+      
          ├── modelo_slowlog.pkl # Modelo treinado para comandos lentos 
+         
          ├── analisador_conf.py # Engine de regras para redis.conf  
+         
          ├── regras_config.json # Regras de boas práticas e alertas para o .conf
+         
          ├── regras_redis.json # Regras de boas práticas e alertas para comandos do slowlog
-         ├── redis_recomendador.py # Lógica de sugestões por comando  
+         
+         ├── redis_recomendador.py # Lógica de sugestões por comando 
+         
          └── ... # Outros módulos internos da Selene
          
 > A pasta `selene/` é onde a mágica acontece. Ela analisa, interpreta e sugere.
