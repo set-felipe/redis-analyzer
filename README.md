@@ -17,12 +17,12 @@ Ela não depende de treino em tempo real:
 A Selene já vem com modelos treinados e calibrados para rodar de forma leve.  
 Isso significa que **você não precisa de GPU nem de instâncias pesadas** para usá-la.  
 O foco aqui é acessibilidade + inteligência aplicada ao dia a dia.
----------
+
 #Comentário:
 A ideia inicial era fazer da Selene um algoritmo de machine learning completo, que realmente aprendesse com o uso do Redis em tempo real.
 Mas eu sei que nem todo mundo tem uma instância com recursos suficientes pra isso.
 Então, essa versão foi a forma que encontrei de entregar parte do potencial da Selene — de forma leve, acessível e sem exigir uma infraestrutura potente.
--------
+
 Selene te ajuda a detectar:
 
 - Comandos problemáticos no `SLOWLOG` e no uso diário
