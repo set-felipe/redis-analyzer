@@ -20,6 +20,7 @@ O foco aqui é acessibilidade + inteligência aplicada ao dia a dia.
 
 #Comentário:
 A ideia inicial era fazer da Selene um algoritmo de machine learning completo, que realmente aprendesse com o uso do Redis em tempo real.
+
 Mas eu sei que nem todo mundo tem uma instância com recursos suficientes pra isso.
 Então, essa versão foi a forma que encontrei de entregar parte do potencial da Selene — de forma leve, acessível e sem exigir uma infraestrutura potente.
 
