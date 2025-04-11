@@ -56,7 +56,42 @@ Redis Analyzer foi criado para ajudar desenvolvedores, DevOps e analistas a iden
 
 ---
 
-## ⚙️ Componentes
+## ⚙️ Componentes do Projeto
+
+### 📊 app/main.py
+Responsável por renderizar toda a interface da aplicação usando Dash.  
+Conecta os painéis de análise com os módulos da Selene para mostrar:
+
+-Métricas atualizadas a cada 10 segundos (isso pode ser configurado por você para tempo real, caso necessário, diretamente na aba de configurações da aplicação).
+- Alertas técnicos
+- Sugestões baseadas em ML e regras
+
+---
+
+### 🎨 assets/
+Contém os arquivos CSS usados para estilizar o painel.  
+Deixa a interface mais amigável, escura e profissional (porque ninguém merece Dash sem estilo kkk).
+
+---
+
+### 🧠 selene/
+A mente do projeto. Aqui ficam os motores de análise.
+
+- `modelo_slowlog.pkl`  
+  Modelo treinado para classificar comandos do Redis que são lentos ou ineficientes.  
+  Baseado no `SLOWLOG`.
+
+- `analisador_conf.py`  
+  Engine de regras que avalia o `redis.conf` e retorna alertas de segurança, performance e boas práticas.
+
+- `regras_config.json`  
+  Arquivo com todas as boas práticas e recomendações categorizadas (ex: segurança, memória, persistência...).
+-`regras_redis.json`  
+  Módulo que tem as regras dos comandos comandos e sugere melhorias (ex: substituir `DEL` por `UNLINK`, evitar `KEYS *`, etc)
+
+- `recomendador.py`  
+  Módulo que interpreta comandos e sugere melhorias (ex: substituir `DEL` por `UNLINK`, evitar `KEYS *`, etc).
+
 
 ### 🧠 1. Módulo de Performance e ML
 
