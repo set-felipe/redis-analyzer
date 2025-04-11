@@ -119,13 +119,14 @@ A mente do projeto. Aqui ficam os motores de análise.
 - ✔️ Regras com categorias (segurança, memória, persistência, etc.)
 - ✔️ Engine leve e interpretável
 - ✔️ Estrutura pronta para receber ML e Dash
+- ✔️ Treinamento incremental baseado em datasets reais
 
 ---
 
-## 🔄 O que vem por aí
+## 🔄 O que vem por aí 
 
-- [ ] Treinamento incremental baseado em datasets reais
 - [ ] Deploy via Docker
+- [ ] Publicar uma versão de teste do projeto.
 
 ---
 
