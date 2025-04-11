@@ -7,6 +7,7 @@ Combina análise de performance, detecção de anomalias via Machine Learning e 
 ## 🧠 Quem é a Selene?
 
 Selene é a inteligência por trás do Redis Analyzer — e também o nome da minha gata kk
+
 Ela foi criada com uma combinação de técnicas de **AutoML**, **classificação supervisionada** e uma **engine de regras baseada em boas práticas do Redis**.
 
 A proposta da Selene é simples:  
