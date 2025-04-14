@@ -31,7 +31,8 @@ Selene te ajuda a detectar:
 - Anomalias em métricas como memória, CPU e conexões
 
 ## 📁 Estrutura do Projeto
-app/  ├── main.py # Aplicação principal (Dash) 
+
+      ├── main.py # Aplicação principal (Dash) 
 
       ├── assets/ # Estilos CSS e estáticos 
       
@@ -62,15 +63,125 @@ Redis Analyzer foi criado para ajudar desenvolvedores, DevOps e analistas a iden
 
 ---
 
-## ⚙️ Componentes do Projeto
+### ⚙️ Componentes do Projeto
 
-### 📊 app/main.py
-Responsável por renderizar toda a interface da aplicação usando Dash.  
-Conecta os painéis de análise com os módulos da Selene para mostrar:
 
--Métricas atualizadas a cada 10 segundos (isso pode ser configurado por você para tempo real, caso necessário, diretamente na aba de configurações da aplicação).
-- Alertas técnicos
-- Sugestões baseadas em ML e regras
+# 🧠 Arquivo `main.py` – Aplicação Principal do Redis Analyzer
+
+Este arquivo é o ponto central da aplicação Dash + Flask responsável por:
+
+- Carregar os dados do Redis (INFO, SLOWLOG, CONFIG, etc)
+- Exibir gráficos e tabelas de performance
+- Acionar a IA (Selene) para análise inteligente
+- Gerar relatórios em PDF
+- Orquestrar callbacks, atualizações e interações com o usuário
+
+---
+
+## 📌 Principais funcionalidades do `main.py`
+
+### 🔹 Conexão com Redis
+
+Conexão é estabelecida com fallback seguro:
+
+```python
+redis_connection = get_redis_connection()
+```
+
+Usa `config.py` para parâmetros e tenta reconectar em caso de falha.
+
+---
+
+### 📉 Análise de Performance (SLOWLOG)
+
+```python
+carregar_slowlog() → gerar_dataframe() → análise ML via Selene
+```
+
+Os comandos lentos são processados e convertidos em DataFrame, depois analisados pela IA.
+
+---
+
+### 📊 Métricas do Redis (INFO, MEMORY, STATS)
+
+Usa:
+
+```python
+redis_connection.info()
+```
+
+Para extrair métricas como:
+
+- Memória usada
+- Comandos executados
+- Conexões ativas
+- CPU e uptime
+
+---
+
+### 📋 Healthcheck de Configuração
+
+Via:
+
+```python
+config = redis_connection.config_get()
+resultados = analisar_configuracao(config)
+```
+
+Valida parâmetros sensíveis como:
+
+- `save`
+- `maxmemory`
+- `bind`
+- `lazyfree`
+- `cluster-announce-ip`
+
+Usa regras definidas em `regras_config.json`.
+
+---
+
+### 🤖 Integração com Selene (IA)
+
+Usa modelo treinado para classificar comandos ineficientes:
+
+```python
+df_ia = aplicar_modelo(df)
+```
+
+Resultado é apresentado como sugestões visuais, com nível de alerta, comando e recomendação.
+
+---
+
+### 📤 Geração de Relatório PDF
+
+Rota `/download-pdf` dispara a função:
+
+```python
+gerar_relatorio_pdf(resultados)
+```
+
+Gera documento com métricas, diagnóstico e configurações Redis auditadas.
+
+---
+
+### 🧠 Dash Layout e Callbacks
+
+O layout inclui:
+
+- Tabelas atualizadas via `dcc.Interval`
+- Gráficos com Plotly (memória, CPU, operações)
+- Splash screen
+- Cartões flutuantes com insights
+- Botões de ação (Healthcheck, IA)
+
+---
+
+### 🔁 Atualização automática
+
+Timers (`dcc.Interval`) acionam funções como:
+
+- Reexecução da IA em intervalos definidos
+- Atualização de histórico (via CSV)
 
 ---
 
