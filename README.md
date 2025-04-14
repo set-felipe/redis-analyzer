@@ -373,8 +373,9 @@ A mente do projeto. Aqui ficam os motores de análise.
 
 ## 🔄 O que vem por aí 
 
-- [ ] Deploy via Docker
+- [ ] Deploy via Docker da versão StandAlone
 - [ ] Publicar uma versão de teste do projeto.
+- [ ] Deploy via Docker da versão com suporter para Cluster e mais de um nó Master -> Replica
 
 ---
 
