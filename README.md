@@ -74,6 +74,143 @@ Conecta os painéis de análise com os módulos da Selene para mostrar:
 
 ---
 
+# ⚙️ Arquivo `config.py` – Configurações da Aplicação Redis Analyzer
+
+Este arquivo centraliza todas as configurações da aplicação, incluindo:
+
+- Conexão com Redis
+- Parâmetros do servidor Dash
+- Ajustes de coleta de dados
+- Temas e comportamento do dashboard
+- Intervalos de atualização e performance
+- Integração com IA e controle de alertas
+
+---
+
+## 🔌 REDIS_CONFIG
+
+Configurações avançadas para criação de uma conexão otimizada com Redis, incluindo:
+
+```python
+REDIS_CONFIG = {
+    'host': 'debian_laboratorio',
+    'port': 6379,
+    'socket_timeout': 5,
+    'retry_on_timeout': True,
+    'max_connections': 10,
+    'health_check_interval': 30,
+    ...
+}
+```
+
+### Destaques:
+- **`socket_keepalive`**: mantém conexões persistentes ativas.
+- **`health_check_interval`**: evita quedas silenciosas da conexão.
+- **`socket_timeout` & `socket_connect_timeout`**: protegem contra conexões travadas.
+
+---
+
+## 🚀 APP_CONFIG
+
+Configurações do servidor da aplicação Dash:
+
+```python
+APP_CONFIG = {
+    'host': '0.0.0.0',
+    'port': 8050,
+    'debug': False,
+    'title': 'Redis SLOWLOG Analyzer'
+}
+```
+
+---
+
+## 📦 DATA_CONFIG
+
+Define os limites de coleta e caminhos para histórico e modelo de IA:
+
+```python
+DATA_CONFIG = {
+    'slowlog_limit': 128,
+    'max_keys': 10000,
+    'prefix_len': 1,
+    'history_file': 'historico_memoria.csv',
+    'model_path': 'selene/modelo_slowlog.pkl'
+}
+```
+
+---
+
+## 📊 DASHBOARD_CONFIG
+
+Controla a aparência e comportamento visual do dashboard:
+
+```python
+DASHBOARD_CONFIG = {
+    'update_interval': 5000,
+    'table_update_interval': 30000,
+    'max_table_rows': 20,
+    'theme': {
+        'background_color': '#1f2c56',
+        'text_color': 'white',
+        ...
+    }
+}
+```
+
+---
+
+## 🔄 UPDATE_CONFIG
+
+Gerencia intervalos, cache, performance, IA e alertas. Essencial para balancear **responsividade vs. carga de processamento**.
+
+```python
+UPDATE_CONFIG = {
+    'interval_rapido': 5000,
+    'cache_timeout': 3600,
+    'ia_min_interval': 30,
+    'alert_threshold': 0.8,
+    ...
+}
+```
+
+### Destaques:
+- **`batch_size`**: define o volume de dados processados por chunk.
+- **`ia_batch_size`**: controla o volume de itens analisados por vez pela IA.
+- **`alert_threshold`**: sensibilidade da detecção de anomalias.
+- **`alert_cooldown`**: evita spam de alertas.
+
+---
+
+## 🔁 Conexão com Redis
+
+```python
+redis_pool = redis.ConnectionPool(**REDIS_CONFIG)
+```
+
+Todas as conexões Redis utilizam esse pool otimizando uso de recursos.
+
+---
+
+## 🛡️ Função `get_redis_connection()`
+
+Responsável por retornar uma conexão viva com Redis, com tentativa de reconexão automática em caso de falha.
+
+```python
+def get_redis_connection():
+    try:
+        connection = redis.Redis(connection_pool=redis_pool)
+        connection.ping()
+        return connection
+    ...
+```
+
+---
+
+## ✅ Conclusão
+
+O `config.py` é o coração da parametrização da aplicação. Ter todas essas configurações centralizadas facilita ajustes finos para produção, testes e controle do comportamento da IA, dashboard e Redis.
+
 ### 🎨 assets/
 Contém os arquivos CSS usados para estilizar o painel.  
 Deixa a interface mais amigável, escura e profissional (porque ninguém merece Dash sem estilo kkk).
