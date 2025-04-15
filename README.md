@@ -327,17 +327,15 @@ def get_redis_connection():
 
 ---
 
-## ✅ Conclusão
 
-O `config.py` é o coração da parametrização da aplicação. Ter todas essas configurações centralizadas facilita ajustes finos para produção, testes e controle do comportamento da IA, dashboard e Redis.
 
-### 🎨 assets/
+# 🎨 assets/
 Contém os arquivos CSS usados para estilizar o painel.  
 Deixa a interface mais amigável, escura e profissional (porque ninguém merece Dash sem estilo kkk).
 
 ---
 
-### 🧠 selene/
+# 🧠 selene/
 A mente do projeto. Aqui ficam os motores de análise.
 
 - `modelo_slowlog.pkl`  
