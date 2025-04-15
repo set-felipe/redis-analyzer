@@ -5,8 +5,11 @@ Diagnóstico inteligente para ambientes Redis.
 Combina análise de performance, detecção de anomalias via Machine Learning e health check de configuração com uma engine de regras.
 
 🔍 Tipo: Ferramenta de diagnóstico e observabilidade.
+
 🧠 Tecnologia: Python + Dash + Redis + IA.
+
 🚀 Objetivo: Identificar e explicar comandos ineficientes, más práticas e gargalos de configuração no Redis.
+
 🧰 Funcionalidades: SLOWLOG Analyzer, Healthcheck, PDF Report, Recomendações de ML, Monitor de Recursos.
 
 ---
