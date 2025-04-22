@@ -42,7 +42,7 @@ Selene te ajuda a detectar:
 ## 📁 Estrutura do Projeto
 
       ├── main.py # Aplicação principal (Dash) 
-
+      ├── config.py # Configurações gerais do app
       ├── assets/ # Estilos CSS e estáticos 
       
       ├── selene/ # Engine de IA: ML + regras 
