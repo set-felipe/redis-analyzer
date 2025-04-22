@@ -352,8 +352,8 @@ A mente do projeto. Aqui ficam os motores de análise.
 
 - `recomendador.py`  
   Módulo que interpreta comandos e sugere melhorias (ex: substituir `DEL` por `UNLINK`, evitar `KEYS *`, etc).
-
-
+- `main.py`
+Módulo principal onde roda todas as questões de ML
 ### 🧠 1. Módulo de Performance e ML
 
 - Detecta comandos lentos usando modelos supervisionados
@@ -374,7 +374,7 @@ A mente do projeto. Aqui ficam os motores de análise.
 - ✔️ Regras com categorias (segurança, memória, persistência, etc.)
 - ✔️ Engine leve e interpretável
 - ✔️ Estrutura pronta para receber ML e Dash
-- ✔️ Treinamento incremental baseado em datasets reais
+- ✔️ Treinamento incremental baseado em datasets 
 
 ---
 
