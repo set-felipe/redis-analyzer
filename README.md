@@ -354,6 +354,9 @@ A mente do projeto. Aqui ficam os motores de análise.
   Módulo que interpreta comandos e sugere melhorias (ex: substituir `DEL` por `UNLINK`, evitar `KEYS *`, etc).
 - `main.py`
 Módulo principal onde roda todas as questões de ML
+- `template_healthceck.html`
+Template do PDF
+
 ### 🧠 1. Módulo de Performance e ML
 
 - Detecta comandos lentos usando modelos supervisionados
