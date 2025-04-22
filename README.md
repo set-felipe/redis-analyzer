@@ -395,7 +395,7 @@ Quer testar, sugerir ou contribuir? Abre uma issue ou chama no LinkedIn 👇
 
 ## 📫 Contato
 
-Feito com 🧠 e ☕ por pela comunidade Redis Brasil 
+Feito com 🧠 e ☕ pela comunidade Redis Brasil 
 [LinkedIn](https://www.linkedin.com/groups/13187680/) • [GitHub](https://github.com/set-felie) 
 
 ---
