@@ -395,8 +395,8 @@ Quer testar, sugerir ou contribuir? Abre uma issue ou chama no LinkedIn 👇
 
 ## 📫 Contato
 
-Feito com 🧠 e ☕ por [Felipe Feitosa]  
-[LinkedIn](www.linkedin.com/in/felipe-feitosa-484700300) • [GitHub](https://github.com/set-felie) 
+Feito com 🧠 e ☕ por pela comunidade Redis Brasil 
+[LinkedIn](https://www.linkedin.com/groups/13187680/) • [GitHub](https://github.com/set-felie) 
 
 ---
 
