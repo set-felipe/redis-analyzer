@@ -43,8 +43,7 @@ Selene te ajuda a detectar:
 
       ├── main.py # Aplicação principal (Dash) 
       ├── config.py # Configurações gerais do app
-      ├── assets/ # Estilos CSS e estáticos 
-      
+      ├── assets/ # Estilos CSS e estáticos       
       ├── selene/ # Engine de IA: ML + regras 
       
          ├── modelo_slowlog.pkl # Modelo treinado para comandos lentos 
