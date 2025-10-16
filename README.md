@@ -6,7 +6,7 @@ Combina análise de performance, detecção de anomalias via Machine Learning e 
 
 🔍 Tipo: Ferramenta de diagnóstico e observabilidade.
 
-🧠 Tecnologia: Python + Dash + Redis + IA.
+🧠 Tecnologia: Python + Dash + Redis + ML.
 
 🚀 Objetivo: Identificar e explicar comandos ineficientes, más práticas e gargalos de configuração no Redis.
 
